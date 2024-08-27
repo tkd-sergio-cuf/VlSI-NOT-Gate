@@ -14,32 +14,32 @@
         <h3 class="subtitle">Caracterizacion tecnologia:</h3 class="subtitle">
         <div class="grid-container">
             <div class="input-group">
-                <label for="input1">Vdd (V)</label>
-                <input type="number" id="input1" placeholder="1.8">
+                <label for="vdd">Vdd (V)</label>
+                <input type="number" id="vdd" placeholder="1.8">
             </div>
             <div class="input-group">
-                <label for="input2">Vthn (V)</label>
-                <input type="number" id="input2" placeholder="0.35">
+                <label for="vn">Vthn (V)</label>
+                <input type="number" id="vn" placeholder="0.35">
             </div>
             <div class="input-group">
-                <label for="input3">Vthp (V)</label>
-                <input type="number" id="input3" placeholder="0.42">
+                <label for="Vp">|Vthp| (V)</label>
+                <input type="number" id="vp" placeholder="0.42">
             </div>
             <div class="input-group">
-                <label for="input4">μnCox (m²/vs)</label>
-                <input type="number" id="input4" placeholder="250">
+                <label for="un">μnCox (m²/vs)</label>
+                <input type="number" id="un" placeholder="250">
             </div>
             <div class="input-group">
-                <label for="input5">μpCox (m²/vs)</label>
-                <input type="number" id="input5" placeholder="150">
+                <label for="up">μpCox (m²/vs)</label>
+                <input type="number" id="up" placeholder="150">
             </div>
             <div class="input-group">
-                <label for="input6">Cl (pF)</label>
-                <input type="number" id="input6" placeholder="10">
+                <label for="cl">Cl (pF)</label>
+                <input type="number" id="cl" placeholder="10">
             </div>
             <div class="input-group">
-                <label for="input7">Lmin (nm)</label>
-                <input type="number" id="input7" placeholder="180">
+                <label for="lmin">Lmin (nm)</label>
+                <input type="number" id="lmin" placeholder="180">
             </div>
         </div>
     </section>
@@ -47,26 +47,45 @@
         <h3 class="subtitle">Calculo de dimensiones a partir de caracteristicas dinamicas</h3>
         <div class="grid-container">
             <div class="input-group">
-                <label for="input1">Vm (V)</label>
-                <input type="number" id="input1" placeholder="0.9">
+                <label for="vm">Vm (V)</label>
+                <input type="number" id="vm" placeholder="0.9">
             </div>
             <div class="input-group">
-                <label for="input2">tpmax (ns)</label>
-                <input type="number" id="input2" placeholder="2">
+                <label for="tpmax">tpmax (ns)</label>
+                <input type="number" id="tpmax" placeholder="2">
             </div>
         </div>
-        <button class="btn" type="button">Calcular</button>
+        <div id="function1" class="results collapsed">
+            <h4>Resultados</h4>
+            <h5>Caracterizticas estaticas:</h5>
+            <p id="r1"></p>
+            <p id="wnwp1"></p>
+            <p id="vil1"></p>
+            <p id="vih1"></p>
+            <p id="nmh1"></p>
+            <p id="nml1"></p>
+            <h5>Caracterizticas dinamicas:</h5>
+            <p id="landan1"></p>
+            <p id="landap1"></p>
+            <p id="tphl1"></p>
+            <p id="tplh1"></p>
+            <p id="tp1"></p>
+            <h5>Dimensiones:</h5>
+            <p id="wn1"></p>
+            <p id="wp1"></p>
+        </div>
+        <button class="btn" id="dimesions" type="button">Calcular</button>
     </Section>
     <Section>
         <h3 class="subtitle">Calculo de caracteristicas estaticas y dinamicas a partir de dimensiones</h3>
         <div class="grid-container">
             <div class="input-group">
-                <label for="input1">Wn (μm)</label>
-                <input type="number" id="input1" placeholder="1.8">
+                <label for="wn">Wn (μm)</label>
+                <input type="number" id="wn" placeholder="1.8">
             </div>
             <div class="input-group">
-                <label for="input2">Wp (μm)</label>
-                <input type="number" id="input2" placeholder="2">
+                <label for="wp">Wp (μm)</label>
+                <input type="number" id="wp" placeholder="2">
             </div>
         </div>
         <button class="btn" type="button">Calcular</button>

@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
     border: none;
+    font-size: 1rem;
+    font-weight: 300;
 }
 body {
     background-color: #18181b;
@@ -20,11 +22,22 @@ a{
 }
 .title{
     margin: 10px 0px;
+    font-size: 2.5rem;
+    font-weight: 600;
 }
 .subtitle{
     color: hsl(60 5% 90%);
-    font-weight: 300;
     margin-top: 10px;
+    font-size: 1.5rem;
+}
+h4{
+    font-size: 1.35rem;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+h5{
+    font-size: 1.1rem;
+    margin-bottom: 3px;
 }
 
 .btn{
@@ -81,6 +94,30 @@ input[type="number"]::placeholder {
 
 .input-group:nth-child(7) {
     grid-column: 2 / 3;
+}
+
+.results {
+    overflow: hidden;
+    height: 0;
+    padding: 0 13px;
+    transition: height 1.5s ease, border 1s ease;
+    line-height: 20px;
+}
+
+.results.expanded {
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 380px;
+    margin: 0 0 22px 25px;
+
+}
+
+.results.collapsed {
+    height: 0;
+    border: 0px solid transparent;
+}
+.results p{
+    margin-left: 15px;
 }
 
 @media screen and (max-width: 768px) {
