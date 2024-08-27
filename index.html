@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compuerta NOT</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <script src="/index.js"></script>
+</head>
+<body>
+    <h1 class="title">Calculadora VLSI - Compuerta NOT</h1>
+    <section>
+        <h3 class="subtitle">Caracterizacion tecnologia:</h3 class="subtitle">
+        <div class="grid-container">
+            <div class="input-group">
+                <label for="input1">Vdd (V)</label>
+                <input type="number" id="input1" placeholder="1.8">
+            </div>
+            <div class="input-group">
+                <label for="input2">Vthn (V)</label>
+                <input type="number" id="input2" placeholder="0.35">
+            </div>
+            <div class="input-group">
+                <label for="input3">Vthp (V)</label>
+                <input type="number" id="input3" placeholder="0.42">
+            </div>
+            <div class="input-group">
+                <label for="input4">μnCox (m²/vs)</label>
+                <input type="number" id="input4" placeholder="250">
+            </div>
+            <div class="input-group">
+                <label for="input5">μpCox (m²/vs)</label>
+                <input type="number" id="input5" placeholder="150">
+            </div>
+            <div class="input-group">
+                <label for="input6">Cl (pF)</label>
+                <input type="number" id="input6" placeholder="10">
+            </div>
+            <div class="input-group">
+                <label for="input7">Lmin (nm)</label>
+                <input type="number" id="input7" placeholder="180">
+            </div>
+        </div>
+    </section>
+    <Section>
+        <h3 class="subtitle">Calculo de dimensiones a partir de caracteristicas dinamicas</h3>
+        <div class="grid-container">
+            <div class="input-group">
+                <label for="input1">Vm (V)</label>
+                <input type="number" id="input1" placeholder="0.9">
+            </div>
+            <div class="input-group">
+                <label for="input2">tpmax (ns)</label>
+                <input type="number" id="input2" placeholder="2">
+            </div>
+        </div>
+        <button class="btn" type="button">Calcular</button>
+    </Section>
+    <Section>
+        <h3 class="subtitle">Calculo de caracteristicas estaticas y dinamicas a partir de dimensiones</h3>
+        <div class="grid-container">
+            <div class="input-group">
+                <label for="input1">Wn (μm)</label>
+                <input type="number" id="input1" placeholder="1.8">
+            </div>
+            <div class="input-group">
+                <label for="input2">Wp (μm)</label>
+                <input type="number" id="input2" placeholder="2">
+            </div>
+        </div>
+        <button class="btn" type="button">Calcular</button>
+    </Section>
+
+</body>
+</html>
