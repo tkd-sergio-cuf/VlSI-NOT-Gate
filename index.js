@@ -28,34 +28,20 @@ const calcularCaracteristicas = (unCox, upCox, Vn, Vp, Wn, Wp, lmin, Vdd, cl) =>
     
     const r = Math.sqrt((Wn * unCox) / (Wp * upCox));
 
-    
     const Vm = (Vdd - Math.abs(Vp) + (r * Vn)) / (r + 1);
-    const VIL = (2 * Math.sqrt(r) * (Vdd - Math.abs(Vp) - Vn)) / ((r - 1) * Math.sqrt(r + 3)) - (((Vdd - Math.abs(Vp)) - (r * Vn)) / (r - 1));
-    const VIH = (2 * r * (Vdd - Math.abs(Vp) - Vn)) / ((r - 1) * Math.sqrt(1 + 3 * r)) - (((Vdd - Math.abs(Vp)) - (r * Vn)) / (r - 1));
-    const NMh = Vdd - VIH;
-    const NMl = VIL;
+    const Vil = (2 * Math.sqrt(r) * (Vdd - Math.abs(Vp) - Vn)) / ((r - 1) * Math.sqrt(r + 3)) - (((Vdd - Math.abs(Vp)) - (r * Vn)) / (r - 1));
+    const Vih = (2 * r * (Vdd - Math.abs(Vp) - Vn)) / ((r - 1) * Math.sqrt(1 + 3 * r)) - (((Vdd - Math.abs(Vp)) - (r * Vn)) / (r - 1));
+    const NMh = Vdd - Vih;
+    const NMl = Vil;
 
     const landan = 2 / ((7 / 4) - (3 * Vn / Vdd) + Math.pow(Vn / Vdd, 2));
     const landap = 2 / ((7 / 4) - (3 * Math.abs(Vp) / Vdd) + Math.pow(Math.abs(Vp) / Vdd, 2));
-    const tpLH = (landap * cl) / (upCox * (Wp / lmin) * Vdd);
-    const tpHL = (landan * cl) / (unCox * (Wn / lmin) * Vdd);
-    const tp = (1 / 2) * (tpHL + tpLH);
+    const tplh = (landap * cl) / (upCox * (Wp / lmin) * Vdd);
+    const tphl = (landan * cl) / (unCox * (Wn / lmin) * Vdd);
+    const tp = (1 / 2) * (tphl + tplh);
 
-    
-    console.log("\nCaracterísticas estáticas:");
-    console.log(`Valor de r: ${r}`);
-    console.log(`Valor de Vm: ${Vm} V`);
-    console.log(`Valor de VIL: ${VIL} V`);
-    console.log(`Valor de VIH: ${VIH} V`);
-    console.log(`Valor de NMh: ${NMh} V`);
-    console.log(`Valor de NMl: ${NMl} V`);
+    return [r, Vm, Vil, Vih, NMh, NMl, landan, landap, tplh, tphl, tp];
 
-    console.log("\nCaracterísticas dinámicas:");
-    console.log(`Valor de landan: ${landan}`);
-    console.log(`Valor de landap: ${landap}`);
-    console.log(`Valor de tpLH: ${tpLH * Math.pow(10 , 9)} ns`);
-    console.log(`Valor de tpHL: ${tpHL * Math.pow(10 , 9)} ns`);
-    console.log(`Valor de tp: ${tp * Math.pow(10 , 9)} ns`);
 }
 
 const clickBtnFunction1 = (VddInput, VnInput, VpInput, unCoxInput, upCoxInput, clInput, lminInput, VmInput, tpmaxInput)=>{
@@ -89,8 +75,40 @@ const clickBtnFunction1 = (VddInput, VnInput, VpInput, unCoxInput, upCoxInput, c
     const tplh_p = document.querySelector("#tplh1").innerHTML = `- tplh(ns): ${tplh * Math.pow(10 , 9)}`;
     const tp_p = document.querySelector("#tp1").innerHTML = `- tp(ns): ${tp * Math.pow(10 , 9)}`;
     const Wn_p = document.querySelector("#wn1").innerHTML = `- Wn(μs): ${Wn * Math.pow(10 , 6)}`;
-    const Wp_p = document.querySelector("#wp1").innerHTML = `- Wp(μs): ${Wn * Math.pow(10 , 6)}`;
+    const Wp_p = document.querySelector("#wp1").innerHTML = `- Wp(μs): ${Wp * Math.pow(10 , 6)}`;
     
+}
+
+const clickBtnFunction2 = (VddInput, VnInput, VpInput, unCoxInput, upCoxInput, clInput, lminInput, WnInput, WpInput)=>{
+    const Vdd = VddInput.value;
+    const Vn = VnInput.value;
+    const Vp = VpInput.value;
+    const unCox = unCoxInput.value * Math.pow(10 , -6);
+    const upCox = upCoxInput.value * Math.pow(10 , -6);
+    const lmin = lminInput.value * Math.pow(10 , -9);
+    const cl = clInput.value * Math.pow(10 , -12);
+    const wn = WnInput.value * Math.pow(10 , -6);
+    const wp = WpInput.value * Math.pow(10 , -6);  
+
+
+    const [r, Vm, Vil, Vih, nMh, nMl, landan, landap, tplh, tphl, tp] = calcularCaracteristicas(unCox, upCox, Vn, Vp, wn, wp, lmin, Vdd, cl);
+
+    const div = document.querySelector("#function2");
+    div.classList.add("expanded");
+    div.classList.remove("collapsed");
+    
+    const r_p = document.querySelector("#r2").innerHTML = `- r: ${r}`;
+    const WnWpRelation_p = document.querySelector("#vm2").innerHTML = `- Vm: ${Vm}`;
+    const Vil_p = document.querySelector("#vil2").innerHTML = `- Vil: ${Vil}`;
+    const Vih_p = document.querySelector("#vih2").innerHTML = `- Vih: ${Vih}`;
+    const nMh_p = document.querySelector("#nmh2").innerHTML = `- NMh: ${nMh}`;
+    const nMl_p = document.querySelector("#nml2").innerHTML = `- NMl: ${nMl}`;
+    const landan_p = document.querySelector("#landan2").innerHTML = `- αn: ${landan}`;
+    const landap_p = document.querySelector("#landap2").innerHTML = `- αp: ${landap}`;
+    const tphl_p = document.querySelector("#tphl2").innerHTML = `- tphl(ns): ${tphl * Math.pow(10 , 9)}`;
+    const tplh_p = document.querySelector("#tplh2").innerHTML = `- tplh(ns): ${tplh * Math.pow(10 , 9)}`;
+    const tp_p = document.querySelector("#tp2").innerHTML = `- tp(ns): ${tp * Math.pow(10 , 9)}`;
+
 }
 
 window.addEventListener("load",()=>{
@@ -111,15 +129,15 @@ window.addEventListener("load",()=>{
     const WnInput = document.querySelector("#wn");
     const WpInput = document.querySelector("#wp");
 
-    const btnDimensions = document.querySelector("#dimesions");
-    btnDimensions.addEventListener("click", ()=>{
+    const btnGetDimensions = document.querySelector("#btnGetDimesions");
+    btnGetDimensions.addEventListener("click", ()=>{
         clickBtnFunction1(VddInput, VnInput, VpInput, unCoxInput, upCoxInput, clInput, lminInput, VmInput, tpmaxInput);
     });
     
+    const btnGetCharacteristics = document.querySelector("#btnGetCharacteristics");
+    btnGetCharacteristics.addEventListener("click", ()=>{
+        clickBtnFunction2(VddInput, VnInput, VpInput, unCoxInput, upCoxInput, clInput, lminInput, WnInput, WpInput);
+    });
+
 });
 
-
-let Wn = 2.26 * Math.pow(10 , -6);
-let Wp = 1 * Math.pow(10 , -6);
-cl = 2 * Math.pow(10 , -12);
-//calcularCaracteristicas(unCox, upCox, Vn, Vp, Wn, Wp, lmin, Vdd, cl); // mo pide Vm ni tpmax
