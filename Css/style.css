@@ -104,12 +104,19 @@ input[type="number"]::placeholder {
     line-height: 20px;
 }
 
-.results.expanded {
+.results.expanded{
     border: 1px solid white;
     border-radius: 5px;
-    height: 380px;
     margin: 0 0 22px 25px;
 
+}
+
+#function1.expanded{
+    height: 380px;
+}
+
+#function2.expanded{
+    height: 320px;
 }
 
 .results.collapsed {

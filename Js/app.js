@@ -63,19 +63,19 @@ const clickBtnFunction1 = (VddInput, VnInput, VpInput, unCoxInput, upCoxInput, c
     div.classList.remove("collapsed");
     
 
-    const r_p = document.querySelector("#r1").innerHTML = `- r: ${r}`;
-    const WnWpRelation_p = document.querySelector("#wnwp1").innerHTML = `- Wn/Wp: ${WnWpRelation}`;
-    const Vil_p = document.querySelector("#vil1").innerHTML = `- Vil: ${Vil}`;
-    const Vih_p = document.querySelector("#vih1").innerHTML = `- Vih: ${Vih}`;
-    const nMh_p = document.querySelector("#nmh1").innerHTML = `- NMh: ${nMh}`;
-    const nMl_p = document.querySelector("#nml1").innerHTML = `- NMl: ${nMl}`;
-    const landan_p = document.querySelector("#landan1").innerHTML = `- αn: ${landan}`;
-    const landap_p = document.querySelector("#landap1").innerHTML = `- αp: ${landap}`;
-    const tphl_p = document.querySelector("#tphl1").innerHTML = `- tphl(ns): ${tphl * Math.pow(10 , 9)}`;
-    const tplh_p = document.querySelector("#tplh1").innerHTML = `- tplh(ns): ${tplh * Math.pow(10 , 9)}`;
-    const tp_p = document.querySelector("#tp1").innerHTML = `- tp(ns): ${tp * Math.pow(10 , 9)}`;
-    const Wn_p = document.querySelector("#wn1").innerHTML = `- Wn(μs): ${Wn * Math.pow(10 , 6)}`;
-    const Wp_p = document.querySelector("#wp1").innerHTML = `- Wp(μs): ${Wp * Math.pow(10 , 6)}`;
+    const r_p = document.querySelector("#r1").innerHTML = `- r: ${r.toFixed(2)}`;
+    const WnWpRelation_p = document.querySelector("#wnwp1").innerHTML = `- Wn/Wp: ${WnWpRelation.toFixed(2)}`;
+    const Vil_p = document.querySelector("#vil1").innerHTML = `- Vil: ${Vil.toFixed(2)}`;
+    const Vih_p = document.querySelector("#vih1").innerHTML = `- Vih: ${Vih.toFixed(2)}`;
+    const nMh_p = document.querySelector("#nmh1").innerHTML = `- NMh: ${nMh.toFixed(2)}`;
+    const nMl_p = document.querySelector("#nml1").innerHTML = `- NMl: ${nMl.toFixed(2)}`;
+    const landan_p = document.querySelector("#landan1").innerHTML = `- αn: ${landan.toFixed(2)}`;
+    const landap_p = document.querySelector("#landap1").innerHTML = `- αp: ${landap.toFixed(2)}`;
+    const tphl_p = document.querySelector("#tphl1").innerHTML = `- tphl(ns): ${(tphl * Math.pow(10 , 9)).toFixed(2)}`;
+    const tplh_p = document.querySelector("#tplh1").innerHTML = `- tplh(ns): ${(tplh * Math.pow(10 , 9)).toFixed(2)}`;
+    const tp_p = document.querySelector("#tp1").innerHTML = `- tp(ns): ${(tp * Math.pow(10 , 9)).toFixed(2)}`;
+    const Wn_p = document.querySelector("#wn1").innerHTML = `- Wn(μs): ${(Wn * Math.pow(10 , 6)).toFixed(2)}`;
+    const Wp_p = document.querySelector("#wp1").innerHTML = `- Wp(μs): ${(Wp * Math.pow(10 , 6)).toFixed(2)}`;
     
 }
 
@@ -97,17 +97,17 @@ const clickBtnFunction2 = (VddInput, VnInput, VpInput, unCoxInput, upCoxInput, c
     div.classList.add("expanded");
     div.classList.remove("collapsed");
     
-    const r_p = document.querySelector("#r2").innerHTML = `- r: ${r}`;
-    const WnWpRelation_p = document.querySelector("#vm2").innerHTML = `- Vm: ${Vm}`;
-    const Vil_p = document.querySelector("#vil2").innerHTML = `- Vil: ${Vil}`;
-    const Vih_p = document.querySelector("#vih2").innerHTML = `- Vih: ${Vih}`;
-    const nMh_p = document.querySelector("#nmh2").innerHTML = `- NMh: ${nMh}`;
-    const nMl_p = document.querySelector("#nml2").innerHTML = `- NMl: ${nMl}`;
-    const landan_p = document.querySelector("#landan2").innerHTML = `- αn: ${landan}`;
-    const landap_p = document.querySelector("#landap2").innerHTML = `- αp: ${landap}`;
-    const tphl_p = document.querySelector("#tphl2").innerHTML = `- tphl(ns): ${tphl * Math.pow(10 , 9)}`;
-    const tplh_p = document.querySelector("#tplh2").innerHTML = `- tplh(ns): ${tplh * Math.pow(10 , 9)}`;
-    const tp_p = document.querySelector("#tp2").innerHTML = `- tp(ns): ${tp * Math.pow(10 , 9)}`;
+    const r_p = document.querySelector("#r2").innerHTML = `- r: ${r.toFixed(2)}`;
+    const WnWpRelation_p = document.querySelector("#vm2").innerHTML = `- Vm: ${Vm.toFixed(2)}`;
+    const Vil_p = document.querySelector("#vil2").innerHTML = `- Vil: ${Vil.toFixed(2)}`;
+    const Vih_p = document.querySelector("#vih2").innerHTML = `- Vih: ${Vih.toFixed(2)}`;
+    const nMh_p = document.querySelector("#nmh2").innerHTML = `- NMh: ${nMh.toFixed(2)}`;
+    const nMl_p = document.querySelector("#nml2").innerHTML = `- NMl: ${nMl.toFixed(2)}`;
+    const landan_p = document.querySelector("#landan2").innerHTML = `- αn: ${landan.toFixed(2)}`;
+    const landap_p = document.querySelector("#landap2").innerHTML = `- αp: ${landap.toFixed(2)}`;
+    const tphl_p = document.querySelector("#tphl2").innerHTML = `- tphl(ns): ${(tphl * Math.pow(10 , 9)).toFixed(2)}`;
+    const tplh_p = document.querySelector("#tplh2").innerHTML = `- tplh(ns): ${(tplh * Math.pow(10 , 9)).toFixed(2)}`;
+    const tp_p = document.querySelector("#tp2").innerHTML = `- tp(ns): ${(tp * Math.pow(10 , 9)).toFixed(2)}`;
 
 }
 
