@@ -7,7 +7,7 @@ const calculoDimenciones = (Vdd, Vn, Vp, Vm, unCox, upCox, lmin, cl, tpmax) => {
     const Vil = (2 * Math.sqrt(r) * (Vdd - Vn - Vp))/((r - 1)*(Math.sqrt(r + 3))) - k;
     const Vih = (2 * r * (Vdd - Vn - Vp))/((r - 1)*(Math.sqrt(1 + (3 * r)))) - k;
 
-    const nMh = 1.8 - Vih;
+    const nMh = Vdd - Vih;
     const nMl = Vil;
 
     const landap = 2/((7/4) - ((3 * Vp)/Vdd) + Math.pow((Vp/Vdd),2));
